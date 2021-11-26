@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+    - name: '"WORKSPACE_7938092"'
+      database: KEBOOLA_4197
+      tables:
+        - name: '"issues"'
+        - name: '"projects"'
+        - name: '"worklogs"'
+        - name: '"users"'
+        - name: '"fields"'
