@@ -1,3 +1,10 @@
+{{
+    config(
+        materialized='incremental',
+        unique_key='"project_id"'
+    )
+}}
+
 SELECT
     "id" AS "project_id" -- PK
     ,"key" AS "project_key"

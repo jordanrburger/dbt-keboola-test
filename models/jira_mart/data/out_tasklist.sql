@@ -1,6 +1,8 @@
 {{
   config(
-    post_hook = "{{ macro_update_task() }}"
+    post_hook = "{{ macro_update_task() }}",
+    materialized='incremental',
+    unique_key='"task_id"'
     )
 }}
 

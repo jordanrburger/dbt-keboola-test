@@ -1,6 +1,8 @@
 {{ config(
   sql_header="set DEF_TIMESTAMP_FORMAT= 'YYYY-MM-DDTHH:MI:SSTZH';
-              set DEF_TIMEZONE= 'Etc/UTC';"
+              set DEF_TIMEZONE= 'Etc/UTC';",
+  materialized='incremental',
+  unique_key='"worklog_id"'
 ) }}
 
 SELECT

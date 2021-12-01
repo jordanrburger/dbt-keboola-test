@@ -1,3 +1,8 @@
+{{ config(
+  materialized='incremental',
+  unique_key='"id"'
+) }}
+
 SELECT
 	  "id"
     ,"key"
