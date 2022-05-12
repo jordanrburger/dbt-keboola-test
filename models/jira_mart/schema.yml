@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: out_project
+    columns:
+      - name: project_id
+        tests:
+          - unique
+          - not_null
