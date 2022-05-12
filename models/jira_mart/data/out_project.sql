@@ -20,7 +20,7 @@ SELECT
     ,CASE WHEN "project_category_name" = 'Keboola Internal' THEN '0' 
           ELSE PARSE_JSON("description"):PRICE::VARCHAR(255) 
         END AS "hour_rate"
-FROM {{ source('"WORKSPACE_7938092"', '"projects"') }}
+FROM {{ source('my_source', 'projects') }}
 WHERE
     "project_category_id" IN ('10001','10004') -- Project Implementation and Internal
     AND
