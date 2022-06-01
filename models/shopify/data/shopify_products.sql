@@ -6,12 +6,12 @@ with products as (
 ), order_lines as (
 
     select *
-    from {{ ref('shopify__order_lines') }}
+    from {{ ref('shopify_order_lines') }}
 
 ), orders as (
 
     select *
-    from {{ ref('shopify__orders')}}
+    from {{ ref('shopify_orders')}}
 
 ), order_lines_aggregated as (
 
