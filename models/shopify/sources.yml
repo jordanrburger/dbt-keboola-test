@@ -2,6 +2,7 @@ version: 2
 
 sources:
     - name: '"WORKSPACE_861268547"'
+    - database: '123'
       tables:
         - name: '"shopify_order_lines"'
         - name: '"shopify_orders"'
