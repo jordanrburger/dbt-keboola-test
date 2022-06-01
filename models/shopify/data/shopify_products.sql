@@ -1,17 +1,17 @@
 with products as (
 
     select *
-    from {{ var('shopify_product') }}
+    from  {{ source('"WORKSPACE_7938092"', '"shopify_product"') }}
 
 ), order_lines as (
 
     select *
-    from {{ ref('shopify_order_lines') }}
+    from {{ source('"WORKSPACE_7938092"', '"shopify_order_lines"') }}
 
 ), orders as (
 
     select *
-    from {{ ref('shopify_orders')}}
+    from {{ source('"WORKSPACE_7938092"', '"shopify_orders"') }}
 
 ), order_lines_aggregated as (
 
