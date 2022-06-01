@@ -4,8 +4,6 @@ sources:
     - name: '"WORKSPACE_7938092"'
       database: KEBOOLA_4197
       tables:
-        - name: '"issues"'
-        - name: '"projects"'
-        - name: '"worklogs"'
-        - name: '"users"'
-        - name: '"fields"'
+        - name: '"shopify_order_lines"'
+        - name: '"shopify_orders"'
+        - name: '"shopify_product"'

@@ -1,9 +1,9 @@
 version: 2
 
 models:
-  - name: out_project
+  - name: out_shopify_products
     columns:
-      - name: project_id
+      - name: out_shopify_products
         tests:
           - unique
           - not_null
