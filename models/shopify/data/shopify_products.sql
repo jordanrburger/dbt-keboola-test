@@ -1,17 +1,19 @@
 with products as (
 
     select *
-    from  {{ ref('"shopify_product"') }}
+    from  {{ source('my_source', 'shopify_product') }}
 
 ), order_lines as (
 
     select *
-    from {{ ref('"shopify_order_lines"') }}
+    from {{ source('my_source', 'shopify_order_lines') }}
+
 
 ), orders as (
 
     select *
-    from {{ ref('"shopify_orders"') }}
+    from {{ source('my_source', 'shopify_orders') }}
+
 
 ), order_lines_aggregated as (
 
