@@ -23,10 +23,6 @@ with products as (
         sum(order_lines.quantity) as quantity_sold,
         sum(order_lines.pre_tax_price) as subtotal_sold,
 
-        {% if enabled_vars(vars=["shopify__using_order_line_refund", "shopify__using_refund"]) %}
-        sum(order_lines.quantity_net_refunds) as quantity_sold_net_refunds,
-        sum(order_lines.subtotal_net_refunds) as subtotal_sold_net_refunds,
-        {% endif %}
 
         min(orders.created_timestamp) as first_order_timestamp,
         max(orders.created_timestamp) as most_recent_order_timestamp
@@ -42,10 +38,6 @@ with products as (
         coalesce(order_lines_aggregated.quantity_sold,0) as quantity_sold,
         coalesce(order_lines_aggregated.subtotal_sold,0) as subtotal_sold,
 
-        {% if (vars=["shopify__using_order_line_refund", "shopify__using_refund"]) %}
-        coalesce(order_lines_aggregated.quantity_sold_net_refunds,0) as quantity_sold_net_refunds,
-        coalesce(order_lines_aggregated.subtotal_sold_net_refunds,0) as subtotal_sold_net_refunds,
-        {% endif %}
         
         order_lines_aggregated.first_order_timestamp,
         order_lines_aggregated.most_recent_order_timestamp
